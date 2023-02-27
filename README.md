@@ -1,8 +1,13 @@
-# Churn-Prediction
+# Churn-Prediction :
 
-## Contributors
+Contributors, please use your branch to do modification.
 
-Naci
-Meba
-Dimitri
-Sebastien
+## Contributors :
+
+- Naci
+
+- Meba
+
+- Dimitri
+
+- Sébastien
