@@ -20,15 +20,15 @@ The XGBoost classifier was used for this part, it was finetuned with the previou
 
 ### Dealing with the imbalance of the dataset :
 
-As there was an imbalance in the dataset in the Attrition Flag target, we try various techniques involving resampling (upsampling), with RandomOverSampler and SMOTE, and finally we try the "scale_pos_weight" of XGBoost. 
+As there was an imbalance in the dataset in the Attrition Flag target, we try various techniques involving resampling (upsampling), with RandomOverSampler and SMOTE, and finally we try to adjust the "scale_pos_weight" of XGBoost. 
 
-After various test, this last method was finally selected.
+After various tests, this last method was finally selected.
 
 In this case, as there was around 16% of churning customer in the dataset, we set the "scale_pos_weight" to the ratio of the number of negative samples to
  the number of positive samples, which in this case is 84/16 = 5.25.
 
 ### Model tree export :
 
-To be able to able what the model is doing to non-tech savvy audience, we decided to export the model tree.
+To be able to able what the model is doing to non-tech savvy audience, we decided to export one of the model tree as an example of how the model behave.
 
 ![xgb_tree.png](./visuals/xgb_tree.png)
