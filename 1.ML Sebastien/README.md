@@ -33,6 +33,6 @@ To be able to able what the model is doing to non-tech savvy audience, we decide
 
 
 
-![xgb_tree.png](.\visuals\xgb_tree.png)
+![xgb_tree.png](./visuals/xgb_tree.png)
 
 
