@@ -2,7 +2,7 @@
 
 #### Introduction :
 
-ML_Classifier_Sebastien.ipynb notebook is used to make the model and export it as a model.bin file, this file can then be used for deployment by the Data Engineer.
+ML_Classifier_Sebastien.ipynb notebook is used to make the model and export it as a xgbmodel.bin file, this file can then be used for deployment by the Data Engineer.
 
 #### Data cleaning and preprocessing :
 
@@ -14,14 +14,21 @@ These numerical features have some relationship with the categorical values, and
 
 The two most important features was the total count of transaction, and the total amount transfered by these transactions, which basically give good information about the usage of the card, and thus the likelyhood of a customer to churn...
 
-#### Resampling :
-
-As there was an imbalance in the dataset in the Attrition Flag target, we use resampling to upsample the dataset to make it balanced, this improve the recall and thus F1 score.
-
 #### Classification model :
 
 The XGBoost classifier was used for this part, it was finetuned with the previously selected features of the dataset to optimise F1 Score to have a good balanced classifying score.
 
+#### Dealing with the imbalance of the dataset :
 
+As there was an imbalance in the dataset in the Attrition Flag target, we try various techniques involving resampling (upsampling), with RandomOverSampler and SMOTE, and finally we try the "scale_pos_weight" of XGBoost. 
+
+After various test, this last method was finally selected.
+
+In this case, as there was around 16% of churning customer in the dataset, we set the "scale_pos_weight" to the ratio of the number of negative samples to
+ the number of positive samples, which in this case is 84/16 = 5.25.
+
+#### Model tree export :
+
+To be able to able what the model is doing to non-tech savvy audience, we decided to export the model tree for being able to explain the model behavior in simpler terms.
 
 
