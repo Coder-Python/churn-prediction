@@ -29,6 +29,6 @@ In this case, as there was around 16% of churning customer in the dataset, we se
 
 ### Model tree export :
 
-To be able to explain how the model is working to a non-tech savvy audience, we decided to export one of the model tree as an example of how the model behave.
+To be able to explain how the model is working to a non-tech savvy audience, we decided to export one of the model tree as an example.
 
 ![xgb_tree.png](./visuals/xgb_tree.png)
