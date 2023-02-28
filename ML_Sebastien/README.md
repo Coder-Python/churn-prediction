@@ -18,13 +18,13 @@ The two most important features was the total count of transaction, and the tota
 
 The XGBoost classifier was used for this part, it was finetuned with the previously selected features of the dataset to optimise F1 Score to have a good balanced classifying score.
 
-F1 Score is a metric used for...
+F1 Score is the harmonic mean of precision and recall. Precision measures the percentage of correctly predicted positive samples among all predicted positive samples, while recall measures the percentage of correctly predicted positive samples among all actual positive samples.
 
-
+Therefore, F1 score is a way of summarizing a model's overall performance in terms of correctly identifying positive samples while minimizing false positives and false negatives.
 
 ### Dealing with the imbalance of the dataset :
 
-There was an imbalance in the dataset in the Attrition Flag target, the classes are not equally represented, and the minority class (the attrited class) has significantly fewer examples than the majority class (the existant customer class). This can cause the model to be biased towards the majority class and perform poorly on the minority class, we try various techniques involving resampling (upsampling), with RandomOverSampler and SMOTE, and finally we try to adjust the `scale_pos_weight` of XGBoost. 
+There was an imbalance in the dataset in the Attrition Flag target, the classes are not equally represented, and the minority class (the attrited customer class) has significantly fewer examples than the majority class (the existing customer class). This can cause the model to be biased towards the majority class and perform poorly on the minority class, we try various techniques involving resampling (upsampling), with RandomOverSampler and SMOTE, and finally we try to adjust the `scale_pos_weight` of XGBoost. 
 
 After various tests, this last method was finally selected.
 
