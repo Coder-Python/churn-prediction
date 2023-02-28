@@ -20,12 +20,21 @@ The XGBoost classifier was used for this part, it was finetuned with the previou
 
 ### Dealing with the imbalance of the dataset :
 
-As there was an imbalance in the dataset in the Attrition Flag target, we try various techniques involving resampling (upsampling), with RandomOverSampler and SMOTE, and finally we try to adjust the "scale_pos_weight" of XGBoost. 
+As there was an imbalance in the dataset in the Attrition Flag target, we try various techniques involving resampling (upsampling), with RandomOverSampler and SMOTE, and finally we try to adjust the `scale_pos_weight` of XGBoost. 
 
 After various tests, this last method was finally selected.
 
-In this case, as there was around 16% of churning customer in the dataset, we set the "scale_pos_weight" to the ratio of the number of negative samples to
- the number of positive samples, which in this case is 84/16 = 5.25.
+### Further explanation about "scale_pos_weight" :
+
+In XGBoost, `scale_pos_weight` is a hyperparameter that is used to balance the training of the model for imbalanced classification problems.
+
+When a dataset is imbalanced, it means that the classes are not equally represented, and the minority class (usually the positive class) has significantly fewer examples than the majority class (usually the negative class). This can cause the model to be biased towards the majority class and perform poorly on the minority class.
+
+The `scale_pos_weight` parameter allows the user to adjust the balance between the positive and negative classes during training by assigning a weight to the positive class. This weight is used to increase the contribution of the positive class to the loss function during training. The higher the weight, the more importance is given to the positive class, and the better the model will be at predicting it.
+
+In this case, as there was around 16% of churning customer in the dataset, we set the `scale_pos_weight` to the ratio of the number of negative samples to the number of positive samples, which in this case is 84/16 = 5.25. This will increase the weight of the positive class by a factor of 5.25, making it more important during training.
+
+In summary, `scale_pos_weight` is a hyperparameter that is used to balance the classes during training for imbalanced classification problems by assigning a weight to the positive class.
 
 ### Model tree export :
 
