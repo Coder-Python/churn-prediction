@@ -18,17 +18,17 @@ The two most important features was the total count of transaction, and the tota
 
 The XGBoost classifier was used for this part, it was finetuned with the previously selected features of the dataset to optimise F1 Score to have a good balanced classifying score.
 
+F1 Score is a metric
+
 ### Dealing with the imbalance of the dataset :
 
-As there was an imbalance in the dataset in the Attrition Flag target, we try various techniques involving resampling (upsampling), with RandomOverSampler and SMOTE, and finally we try to adjust the `scale_pos_weight` of XGBoost. 
+There was an imbalance in the dataset in the Attrition Flag target, the classes are not equally represented, and the minority class (the attrited class) has significantly fewer examples than the majority class (the existant customer class). This can cause the model to be biased towards the majority class and perform poorly on the minority class, we try various techniques involving resampling (upsampling), with RandomOverSampler and SMOTE, and finally we try to adjust the `scale_pos_weight` of XGBoost. 
 
 After various tests, this last method was finally selected.
 
 ### Further explanation about "scale_pos_weight" :
 
 In XGBoost, `scale_pos_weight` is a hyperparameter that is used to balance the training of the model for imbalanced classification problems.
-
-When a dataset is imbalanced, it means that the classes are not equally represented, and the minority class (usually the positive class) has significantly fewer examples than the majority class (usually the negative class). This can cause the model to be biased towards the majority class and perform poorly on the minority class.
 
 The `scale_pos_weight` parameter allows the user to adjust the balance between the positive and negative classes during training by assigning a weight to the positive class. This weight is used to increase the contribution of the positive class to the loss function during training. The higher the weight, the more importance is given to the positive class, and the better the model will be at predicting it.
 
@@ -41,9 +41,3 @@ In summary, `scale_pos_weight` is a hyperparameter that is used to balance the c
 To be able to simply explain how the model is working, we decided to export one of the model tree as an example.
 
 ![xgb_tree.png](./visuals/xgb_tree.png)
-
-
-
-
-
-F1 explain, dealing with imbalance to clear up the data
