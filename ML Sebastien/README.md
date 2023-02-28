@@ -38,6 +38,12 @@ In summary, `scale_pos_weight` is a hyperparameter that is used to balance the c
 
 ### Model tree export :
 
-To be able to explain how the model is working to a non-tech savvy audience, we decided to export one of the model tree as an example.
+To be able to simply explain how the model is working, we decided to export one of the model tree as an example.
 
 ![xgb_tree.png](./visuals/xgb_tree.png)
+
+
+
+
+
+F1 explain, dealing with imbalance to clear up the data
