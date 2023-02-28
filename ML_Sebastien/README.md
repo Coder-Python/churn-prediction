@@ -18,7 +18,9 @@ The two most important features was the total count of transaction, and the tota
 
 The XGBoost classifier was used for this part, it was finetuned with the previously selected features of the dataset to optimise F1 Score to have a good balanced classifying score.
 
-F1 Score is a metric
+F1 Score is a metric used for...
+
+
 
 ### Dealing with the imbalance of the dataset :
 
