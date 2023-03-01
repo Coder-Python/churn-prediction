@@ -12,8 +12,6 @@ Contributors, please use your branch to do modification.
 
 - Sébastien (ML Engineer - Classification Part)
 
-# Churn prediction
-
 ## Description
 
 An important financial institution is interested in analyzing its client database to increase the revenue generated from credit cardholders. They are concerned about customers closing their bank accounts after accepting products from other institutions.
