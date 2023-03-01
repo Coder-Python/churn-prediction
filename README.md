@@ -11,9 +11,3 @@ Contributors, please use your branch to do modification.
 - Dimitri
 
 - Sébastien
-
-
-
-
-
-![tree_model.svg](tree_model.svg)
