@@ -42,4 +42,10 @@ In summary, `scale_pos_weight` is a hyperparameter that is used to balance the c
 
 To be able to simply explain how the model is working, we decided to export one of the model tree as an example.
 
+With Matplotlib :
+
 ![xgb_tree.png](./visuals/xgb_tree.png)
+
+With DTreeViz :
+
+![dtreeviz_tree.svg](.\visuals\dtreeviz_tree.svg)
