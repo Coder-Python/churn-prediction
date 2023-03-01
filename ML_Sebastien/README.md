@@ -38,6 +38,22 @@ In this case, as there was around 16% of churning customer in the dataset, we se
 
 In summary, `scale_pos_weight` is a hyperparameter that is used to balance the classes during training for imbalanced classification problems by assigning a weight to the positive class.
 
+### Model metrics :
+
+##### Confusion Matrix :
+
+![Confusion_Matrix.png](./visuals/Confusion_Matrix.png)
+
+##### Classification Report :
+
+|                  | Precision | Recall | F1-Score | Support |
+| ---------------- | --------- | ------ | -------- | ------- |
+| Class 0          | 99 %      | 98 %   | 98 %     | 1706    |
+| Class 1          | 88 %      | 95 %   | 91 %     | 320     |
+| **Accuracy**     | -         | -      | 97 %     | 2026    |
+| **Macro avg**    | 94 %      | 96 %   | 95 %     | 2026    |
+| **Weighted avg** | 97 %      | 97 %   | 97 %     | 2026    |
+
 ### Model tree export :
 
 To be able to simply explain how the model is working, we decided to use dtreeviz to export one of the model tree as an example.
