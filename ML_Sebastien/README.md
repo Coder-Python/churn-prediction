@@ -55,6 +55,8 @@ In summary, `scale_pos_weight` is a hyperparameter that is used to balance the c
 | **Macro avg**         | 94 %           | 96 %         | 95 %          | 2026         |
 | **Weighted avg**      | 97 %           | 97 %         | 97 %          | 2026         |
 
+ 
+
 ### Model tree export :
 
 To be able to simply explain how the model is working, we decided to use dtreeviz to export one of the model tree as an example.
