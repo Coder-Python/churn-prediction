@@ -1,8 +1,8 @@
-## Machine Learning Part (Classification) :
+## Machine Learning (Classification) :
 
 ### Introduction :
 
-ML_Classifier_Sebastien.ipynb notebook is used to make the model and export it as a xgbmodel.bin file, this file can then be used for deployment by the Data Engineer.
+[ML_Classifier_Sebastien.ipynb]() notebook is used to make the model and export it as a xgbmodel.bin file, this file can then be used for deployment by the Data Engineer.
 
 ### Data cleaning and preprocessing :
 
@@ -41,6 +41,5 @@ In summary, `scale_pos_weight` is a hyperparameter that is used to balance the c
 ### Model tree export :
 
 To be able to simply explain how the model is working, we decided to use dtreeviz to export one of the model tree as an example.
-
 
 ![dtreeviz_tree.svg](./visuals/xgb_dtreeviz_tree.svg)
