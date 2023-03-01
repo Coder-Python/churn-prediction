@@ -44,8 +44,8 @@ To be able to simply explain how the model is working, we decided to export one 
 
 With Matplotlib :
 
-![xgb_tree.png](./visuals/xgb_tree.png)
+![xgb_tree.png](./visuals/xgb_matplotlib_tree.png)
 
 With DTreeViz :
 
-![dtreeviz_tree.svg](.\visuals\dtreeviz_tree.svg)
+![dtreeviz_tree.svg](./visuals/xgb_dtreeviz_tree.svg)
