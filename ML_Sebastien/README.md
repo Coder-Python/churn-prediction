@@ -42,7 +42,7 @@ In summary, `scale_pos_weight` is a hyperparameter that is used to balance the c
 
 ### Confusion Matrix :
 
-![Confusion_Matrix.png](./visuals/Confusion_Matrix.png)
+![Confusion_Matrix.png](./visuals/confusion_matrix.png)
 
 ### Classification Report :
 
