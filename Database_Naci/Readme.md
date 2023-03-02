@@ -1,0 +1,1 @@
+One of the objectives of this project is to build a database from the customer data. We will make a database where we store the raw data which we have received as a csv file. In a next step, a second table can be added according to the preferences of the user. 
