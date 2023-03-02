@@ -66,8 +66,9 @@ class DataProcessor:
         self.df = pd.read_csv(csv_file_path,index_col=0)
         self.is_scaled=False
         self.is_encoded=False
+        self.main_features=["Total_Trans_Ct", "Total_Trans_Amt", "Total_Revolving_Bal"]
 
-        self.scaler = StandardScaler()
+        self.scaler = MinMaxScaler()
         self.encoder=OneHotEncoder(drop='first')
 
         self.X = self.df.drop('Attrition_Flag', axis=1)
@@ -131,15 +132,37 @@ class DataProcessor:
 
     def cluster(self, k):
         # Apply k-means clustering to the numeric columns of the training data
-        kmeans = KMeans(n_clusters=k, random_state=0).fit(self.X_train[self.num_cols])
-        
+        kmeans = KMeans(n_clusters=k, random_state=0).fit(self.X_train[self.main_features])
+        print()
         # Add cluster labels to the training and test data
         self.X_train['cluster'] = kmeans.labels_
-        #self.X_test['cluster'] = kmeans.predict(self.X_test[self.num_cols])
+        self.X_test['cluster'] = kmeans.predict(self.X_test[self.main_features])
+
+        self.centroids=kmeans.cluster_centers_
 
 
-    def features_select():
-        return ["Total_Trans_Ct", "Total_Trans_Amt", "Total_Revolving_Bal", "Total_Amt_Chng_Q4_Q1"]
+
+
+    def plot_cluster(self,df):
+
+
+        # Set the colors for each cluster
+        colors = ['red', 'green', 'blue']
+
+        # Initialize a figure with one subplot for each cluster
+        fig, axes = plt.subplots(nrows=len(df['cluster'].unique()), figsize=(10, 10))
+
+        # Iterate over each cluster and plot the variables on the axes
+        for i, cluster in enumerate(df['cluster'].unique()):
+            subset = df[df['cluster'] == cluster]
+            pd.plotting.radviz(subset[self.main_features], 'cluster', ax=axes[i], color=colors[i])
+            axes[i].set_title(f'Cluster {cluster}', fontsize=16)
+    
+# Adjust the layout of the figure and show the plot
+        plt.tight_layout()
+        plt.show()
+
+
     
     
 
