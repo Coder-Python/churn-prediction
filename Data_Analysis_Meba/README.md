@@ -6,8 +6,6 @@ This file contains code for analyzing customer churn in a bank dataset. The data
 
 The following Python libraries are required to run the code :
 
-
-
 - pandas
 
 - numpy
@@ -35,4 +33,4 @@ The data cleaning process is handled by the "Data Cleaning.ipnyb" script. This s
 
 ### Dashboard
 
-The dashboard displays various metrics related to customer churn in the bank dataset. The metrics are displayed using different charts and visualizations, and allow you to interact with the data.
+The dashboard displays various metrics related to customer churn in the bank dataset. The metrics are displayed using different charts and visualizations which shows the total number of customers, active and inactive customers, Gender, Average credit limit based on the income, Education status over attrition flag, people who were inactive for 12 month and how many times the bank contacted them, attrition flag measure based on the average of the credit limit, contact count in 12 month, Months on book and attrition count, inactivity and revolving balance. This dashboard allow you to interact with the data : https://public.tableau.com/views/DASHBOARD_16775931044680/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link
