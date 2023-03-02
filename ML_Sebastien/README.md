@@ -2,31 +2,33 @@
 
 ### Introduction :
 
-*ML_Classifier.ipynb* notebook is used to make the model and export it as a xgbmodel.bin file, this file can then be used for deployment by the Data Engineer.
+The *ML_Classifier.ipynb* notebook is used to create the model and export it as a xgbmodel.bin file. This file can then be used for deployment by the Data Engineer.
 
 ### Data cleaning and preprocessing :
 
-A quick EDA was performed on the data, there was no missing values which was a very good starting point.
+Data cleaning and preprocessing:
 
-Then, the features importances was computed on a separated notebook and 11 numerical features were selected to train the model.
+A quick exploratory data analysis was performed on the data, and no missing values were found, which was a very good starting point.
 
-These numerical features have some relationship with the categorical values, and thus, the categorical values wasn't selected for final modeling for keeping fitting time as fast as possible.
+Next, the feature importances were computed in a separate notebook, and 11 numerical features were selected to train the model.
 
-The two most important features was the total count of transaction, and the total amount transfered by these transactions, which basically give good information about the usage of the card, and thus the likelyhood of a customer to churn...
+These numerical features have some relationship with the categorical values. Therefore, the categorical values were not selected for the final modeling to keep the fitting time as fast as possible.
+
+The two most important features were the total count of transactions and the total amount transferred by these transactions. These features provide good information about the usage of the card and the likelihood of a customer to churn.
 
 ### Classification model :
 
-The XGBoost classifier was used for this part, it was finetuned with the previously selected features of the dataset to optimise F1 Score to have a good balanced classifying score.
+The XGBoost classifier was used for this part. It was fine-tuned with the previously selected features of the dataset to optimize the F1 Score, resulting in a good balanced classifying score.
 
 F1 Score is the harmonic mean of precision and recall. Precision measures the percentage of correctly predicted positive samples among all predicted positive samples, while recall measures the percentage of correctly predicted positive samples among all actual positive samples.
 
 Therefore, F1 score is a way of summarizing a model's overall performance in terms of correctly identifying positive samples while minimizing false positives and false negatives.
 
-### Dealing with the imbalance of the dataset :
+### Dealing with the dataset imbalance :
 
-There was an imbalance in the dataset in the Attrition Flag target, the classes are not equally represented, and the minority class (the attrited customer class) has significantly fewer examples than the majority class (the existing customer class). This can cause the model to be biased towards the majority class and perform poorly on the minority class, we try various techniques involving resampling (upsampling), with RandomOverSampler and SMOTE, and finally we try to adjust the `scale_pos_weight` of XGBoost. 
+The Attrition Flag target in the dataset was imbalanced, with the classes not equally represented. The minority class (the attrited ustomer class) had significantly fewer examples than the majority class (the existing customer class). This could cause the model to be biased towards the majority class and perform poorly on the minority class. To address this, various techniques involving resampling (upsampling) were tried, including RandomOverSampler and SMOTE. Ultimately, the `scale_pos_weight` of XGBoost was adjusted.
 
-After various tests, this last method was finally selected.
+After conducting several tests, the `scale_pos_weight` adjustment method was chosen as the most effective solution.
 
 ### Further explanation about "scale_pos_weight" :
 
@@ -55,8 +57,8 @@ In summary, `scale_pos_weight` is a hyperparameter that is used to balance the c
 | **Macro avg**         | 94 %           | 96 %         | 95 %          | 2026         |
 | **Weighted avg**      | 97 %           | 97 %         | 97 %          | 2026         |
 
-### Model tree export :
+### Exporting the model tree :
 
-To be able to simply explain how the model is working, we decided to use dtreeviz to export one of the model tree as an example.
+In order to provide a simple explanation of how the model is working, we utilized dtreeviz to export one of the model trees as an example. This allowed us to present the decision-making process of the model in a clear and understandable manner.
 
 ![dtreeviz_tree.svg](./visuals/xgb_dtreeviz_tree.svg)
