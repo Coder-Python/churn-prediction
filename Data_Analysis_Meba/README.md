@@ -2,25 +2,27 @@
 
 This file contains code for analyzing customer churn in a bank dataset. The dataset is stored in a CSV file named "BankChurners.csv" and includes information about customer demographics, banking habits, and whether or not they churned (left) the bank.
 
-
 ### Requirements
 
 The following Python libraries are required to run the code :
-pandas
 
-numpy
 
-scikit-learn
 
-matplotlib
+- pandas
 
-seaborn
+- numpy
 
-plotly
+- scikit-learn
 
-dash
+- matplotlib
 
-dash-bootstrap-components
+- seaborn
+
+- plotly
+
+- dash
+
+- dash-bootstrap-components
 
 ### Installation
 
