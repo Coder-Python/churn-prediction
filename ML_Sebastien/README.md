@@ -4,7 +4,7 @@
 
 The *ML_Classifier.ipynb* notebook is used to create the model and export it as a xgbmodel.bin file. This file can then be used for deployment by the Data Engineer.
 
-aa
+
 
 ### Data cleaning and preprocessing :
 
