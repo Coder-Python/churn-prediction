@@ -1,6 +1,6 @@
 # Churn-Prediction :
 
-Contributors, please use your branch to do modification.
+
 
 ## Contributors :
 
