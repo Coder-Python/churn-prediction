@@ -6,11 +6,9 @@ The *ML_Classifier.ipynb* notebook is used to create the model and export it as 
 
 ### Data cleaning and preprocessing :
 
-Data cleaning and preprocessing:
-
 A quick exploratory data analysis was performed on the data, and no missing values were found, which was a very good starting point.
 
-Next, the feature importances were computed in a separate notebook, and 11 numerical features were selected to train the model.
+Next, the feature importances were computed in a separate notebook with MLJAR, and 11 numerical features were selected to train the model.
 
 These numerical features have some relationship with the categorical values. Therefore, the categorical values were not selected for the final modeling to keep the fitting time as fast as possible.
 
