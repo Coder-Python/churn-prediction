@@ -24,9 +24,9 @@ Therefore, F1 score is a way of summarizing a model's overall performance in ter
 
 ### Dealing with the dataset imbalance :
 
-The Attrition Flag target in the dataset was imbalanced, with the classes not equally represented. The minority class (the attrited ustomer class) had significantly fewer examples than the majority class (the existing customer class). This could cause the model to be biased towards the majority class and perform poorly on the minority class. To address this, various techniques involving resampling (upsampling) were tried, including RandomOverSampler and SMOTE. Ultimately, the `scale_pos_weight` of XGBoost was adjusted.
+The Attrition Flag target in the dataset was imbalanced, with the classes not equally represented. The minority class (the attrited ustomer class) had significantly fewer examples than the majority class (the existing customer class). This could cause the model to be biased towards the majority class and perform poorly on the minority class. To address this, various techniques involving resampling (oversampling with RandomOverSampler or SMOTE) and adjusting the `scale_pos_weight` of XGBoost.
 
-After conducting several tests, the `scale_pos_weight` adjustment method was chosen as the most effective solution.
+After conducting several tests, the `scale_pos_weight` adjustment method was chosen as the most effective solution instead of resampling techniques.
 
 ### Further explanation about "scale_pos_weight" :
 
