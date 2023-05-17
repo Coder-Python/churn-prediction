@@ -60,6 +60,8 @@ In summary, `scale_pos_weight` is a hyperparameter that is used to balance the c
 | **Macro avg**         | 94 %           | 96 %         | 95 %          | 2026         |
 | **Weighted avg**      | 97 %           | 97 %         | 97 %          | 2026         |
 
+The results are promising, particularly the recall score, given the imbalanced data.
+
 ## Exporting the model tree :
 
 In order to provide a simple explanation of how the model is working, we utilized dtreeviz to export one of the model trees as an example. This allowed us to present the decision-making process of the model in a clear and understandable manner.
