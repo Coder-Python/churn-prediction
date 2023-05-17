@@ -1,5 +1,10 @@
 ## Machine Learning (Classification) :
 
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
+
 ### Introduction :
 
 The *ML_Classifier.ipynb* notebook is used to create the model and export it as a xgbmodel.bin file. This file can then be used for deployment by the Data Engineer.
@@ -60,3 +65,9 @@ In summary, `scale_pos_weight` is a hyperparameter that is used to balance the c
 In order to provide a simple explanation of how the model is working, we utilized dtreeviz to export one of the model trees as an example. This allowed us to present the decision-making process of the model in a clear and understandable manner.
 
 ![dtreeviz_tree.svg](./visuals/xgb_dtreeviz_tree.svg)
+
+## Author :
+
+Sébastien Rahir
+
+[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white">](https://www.linkedin.com/in/sebastien-rahir/)
