@@ -1,15 +1,15 @@
-## Machine Learning (Classification) :
+# Machine Learning (Classification) :
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
 
-### Introduction :
+## Introduction :
 
 The *ML_Classifier.ipynb* notebook is used to create the model and export it as a xgbmodel.bin file. This file can then be used for deployment by the Data Engineer.
 
-### Data cleaning and preprocessing :
+## Data cleaning and preprocessing :
 
 A quick exploratory data analysis was performed on the data, and no missing values were found, which was a very good starting point.
 
@@ -19,7 +19,7 @@ These numerical features have some relationship with the categorical values. The
 
 The two most important features were the total count of transactions and the total amount transferred by these transactions. These features provide good information about the usage of the card and the likelihood of a customer to churn.
 
-### Classification model :
+## Classification model :
 
 The XGBoost classifier was used for this part. It was fine-tuned with the previously selected features of the dataset to optimize the F1 Score, resulting in a good balanced classifying score.
 
@@ -27,13 +27,13 @@ F1 Score is the harmonic mean of precision and recall. Precision measures the pe
 
 Therefore, F1 score is a way of summarizing a model's overall performance in terms of correctly identifying positive samples while minimizing false positives and false negatives.
 
-### Dealing with the dataset imbalance :
+## Dealing with the dataset imbalance :
 
 The Attrition Flag target in the dataset was imbalanced, with the classes not equally represented. The minority class (the attrited customer class) had significantly fewer examples than the majority class (the existing customer class). This could cause the model to be biased towards the majority class and perform poorly on the minority class. To address this, we tried various techniques involving resampling (oversampling with RandomOverSampler or SMOTE) and adjusting the `scale_pos_weight` of XGBoost.
 
 After conducting several tests, the `scale_pos_weight` adjustment method was chosen as the most effective solution instead of resampling techniques.
 
-### Further explanation about "scale_pos_weight" :
+## Further explanation about "scale_pos_weight" :
 
 In XGBoost, `scale_pos_weight` is a hyperparameter that is used to balance the training of the model for imbalanced classification problems.
 
@@ -43,13 +43,13 @@ In this case, as there was around 16% of churning customer in the dataset, we se
 
 In summary, `scale_pos_weight` is a hyperparameter that is used to balance the classes during training for imbalanced classification problems by assigning a weight to the positive class.
 
-### Model metrics :
+## Model metrics :
 
-#### Confusion Matrix :
+### Confusion Matrix :
 
 ![Confusion_Matrix.png](./visuals/confusion_matrix.png)
 
-#### Classification Report :
+### Classification Report :
 
 |                       | Precision      | Recall       | F1-Score      | Support      |
 |:--------------------- |:--------------:|:------------:|:-------------:|:------------:|
@@ -60,7 +60,7 @@ In summary, `scale_pos_weight` is a hyperparameter that is used to balance the c
 | **Macro avg**         | 94 %           | 96 %         | 95 %          | 2026         |
 | **Weighted avg**      | 97 %           | 97 %         | 97 %          | 2026         |
 
-### Exporting the model tree :
+## Exporting the model tree :
 
 In order to provide a simple explanation of how the model is working, we utilized dtreeviz to export one of the model trees as an example. This allowed us to present the decision-making process of the model in a clear and understandable manner.
 
