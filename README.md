@@ -50,4 +50,3 @@ Your data team consists of a data engineer, ML engineer, and data analyst, each 
 - Clean and explore the data to provide insights to the marketing team and ML engineers.
 - Apply some of the tools in Tableau to perform clustering analysis and compare your results with the ML engineers.
 - Use the information provided by the ML engineers and your own analysis to create sample client profiles.
-- 
