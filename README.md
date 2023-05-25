@@ -50,10 +50,4 @@ Your data team consists of a data engineer, ML engineer, and data analyst, each 
 - Clean and explore the data to provide insights to the marketing team and ML engineers.
 - Apply some of the tools in Tableau to perform clustering analysis and compare your results with the ML engineers.
 - Use the information provided by the ML engineers and your own analysis to create sample client profiles.
-
-### Must-have features
-
-- A fully integrated data pipeline must be created (i.e. data storage, data cleaning, data preprocessing, modeling, visualizations).
-- Evaluation of the model's performance and definition of its limitations.
-- The dashboard with relevant KPI's is deployed online.
-- Results are clearly communicated to client in an business oriented 10 minute presentation.
+- 
